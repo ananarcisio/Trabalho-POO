@@ -1,14 +1,12 @@
 package view.SubMenus;
 
-import view.Menu;
-
 import java.util.Scanner;
 
 public class SubMenuAluno {
 
-    Menu menuInicial = new Menu();
 
     public void gerenciarAluno(){
+        view.Menu menuInicial = new view.Menu();
         Scanner sc = new Scanner(System.in);
         int opcao;
 
@@ -26,13 +24,32 @@ public class SubMenuAluno {
                 case 2 -> consultarAluno();
                 case 3 -> removerAluno();
                 case 4 -> atualizarAluno();
-                case 5 ->
-                        System.out.println("Voltando ao menu inicial!");
-                        menuInicial.exibirMenu();
-                break;
+                case 5 -> {
+                    System.out.println("Voltando ao menu inicial!");
+                    menuInicial.exibirMenu();
+                    break;
+                }
                 default -> System.out.println("Opção inválida!");
 
             }
         } while (opcao != 6);
     }
+
+    public void removerAluno() {
+        System.out.println("Aluno removido");
+
+    }
+
+    public void consultarAluno() {
+        System.out.println("Aluno consultado");
+    }
+
+    public void cadastrarAluno() {
+        System.out.println("Aluno cadastrado");
+    }
+
+    public void atualizarAluno() {
+        System.out.println("Aluno atualizado");
+    }
+
 }

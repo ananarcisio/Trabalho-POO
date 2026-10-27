@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class SubMenuCurso {
 
-    Menu menuInicial = new Menu();
-
+    Menu menuInicial = new view.Menu();
     public void gerenciarCurso(){
         Scanner sc = new Scanner(System.in);
         int opcao;
@@ -26,14 +25,31 @@ public class SubMenuCurso {
                 case 2 -> consultarCurso();
                 case 3 -> removerCurso();
                 case 4 -> atualizarCurso();
-                case 5 ->
-                        System.out.println("Voltando ao menu inicial!");
-                        menuInicial.exibirMenu();
-                break;
+                case 5 -> {
+                    System.out.println("Voltando ao menu inicial!");
+                    menuInicial.exibirMenu();
+                    break;
+                }
                 default -> System.out.println("Opção inválida!");
 
             }
         } while (opcao != 6);
+    }
+
+    public void removerCurso() {
+        System.out.println("Curso removido");
+    }
+
+    public void consultarCurso() {
+        System.out.println("Curso consultado");
+    }
+
+    public void cadastrarCurso() {
+        System.out.println("Curso cadastrado");
+    }
+
+    public void atualizarCurso() {
+        System.out.println("Curso atualizado");
     }
 
 }

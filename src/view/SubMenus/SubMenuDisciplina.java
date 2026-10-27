@@ -25,13 +25,30 @@ public class SubMenuDisciplina {
                 case 2 -> consultarDisciplina();
                 case 3 -> removerDisciplina();
                 case 4 -> atualizarDisciplina();
-                case 5 ->
-                        System.out.println("Voltando ao menu inicial!");
-                        menuInicial.exibirMenu();
-                break;
+                case 5 -> {
+                    System.out.println("Voltando ao menu inicial!");
+                    menuInicial.exibirMenu();
+                    break;
+                }
                 default -> System.out.println("Opção inválida!");
 
             }
         } while (opcao != 6);
+    }
+
+    public void atualizarDisciplina() {
+        System.out.println("Disciplina atualizada");
+    }
+
+    public void removerDisciplina() {
+        System.out.println("Disciplina removida");
+    }
+
+    public void consultarDisciplina() {
+        System.out.println("Disciplina consultada");
+    }
+
+    public void cadastrarDisciplina() {
+        System.out.println("Disciplina cadastrada");
     }
 }
