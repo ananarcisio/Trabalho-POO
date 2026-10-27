@@ -1,24 +1,24 @@
 package model;
 
 public class Alunos {
-    public int Id;
+    public int Matricula;
     public String Nome;
     public int Idade;
     public Cursos cursos;
 
-    public Alunos(int id, String nome, int idade, Cursos cursos) {
-        Id = id;
+    public Alunos(int matricula, String nome, int idade, Cursos cursos) {
+        Matricula = matricula;
         Nome = nome;
         Idade = idade;
         this.cursos = cursos;
     }
 
-    public int getId() {
-        return Id;
+    public int getMatricula() {
+        return Matricula;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setMatricula(int matricula) {
+        Matricula = matricula;
     }
 
     public String getNome() {
