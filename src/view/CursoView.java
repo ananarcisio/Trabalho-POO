@@ -10,7 +10,7 @@ public class CursoView {
 
     public static void Show(Curso curso) {
         System.out.println("Nome: " + curso.getNome());
-        System.out.println("Carga Horária: " + curso.getCargaHorario());
+        System.out.println("Turno: " + curso.getTurno());
         System.out.println("Disciplinas: " + curso.getDisciplinas());
         for (Disciplina d : curso.getDisciplinas()) {
             System.out.println("  " + d.getId() + " - " + d.getNome());
@@ -26,8 +26,8 @@ public class CursoView {
         System.out.println("Informe o nome do curso: ");
         String nome = scan.next();
 
-        System.out.println("Informe a carga horária do curso: ");
-        int cargaHoraria = scan.nextInt();
+        System.out.println("Informe o turno do curso: ");
+        String turno = scan.next();
 
         System.out.println("Informe a quantidade de disciplinas do curso: ");
         int x = scan.nextInt();
@@ -37,12 +37,14 @@ public class CursoView {
             String nomeDisciplina = scan.next();
             System.out.println("Informe o id da disciplina " + (i + 1) + ":");
             int idDisciplina = scan.nextInt();
-            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina);
+            System.out.println("Informe a carga horária da disciplina " + (i + 1) + ":");
+            int cargaHoraria = scan.nextInt();
+            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina, cargaHoraria);
             curso.setDisciplinas(disciplina);
         }
 
         curso.setNome(nome);
-        curso.setCargaHorario(cargaHoraria);
+        curso.setTurno(turno);
     }
 
     public static String Read() {
@@ -59,8 +61,8 @@ public class CursoView {
         System.out.println("Atualize o nome do curso: " + "(" + curso.getNome() + "): ");
         String nome = scan.next();
 
-        System.out.println("Atualize a carga horária da disciplina: " + "(" + curso.getCargaHorario() + "): ");
-        int cargaHoraria = scan.nextInt();
+        System.out.println("Atualize o turno da curso: " + "(" + curso.getTurno() + "): ");
+        String turno = scan.next();
 
         System.out.println("Atualize as disciplinas do curso: " + "(" + curso.getDisciplinas() + "): ");
         System.out.println("Informe a nova quantidade de disciplinas do curso: ");
@@ -71,12 +73,14 @@ public class CursoView {
             String nomeDisciplina = scan.next();
             System.out.println("Informe o id da disciplina " + (i + 1) + ":");
             int idDisciplina = scan.nextInt();
-            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina);
+            System.out.println("Informe a carga horária da disciplina " + (i + 1) + ":");
+            int cargaHoraria = scan.nextInt();
+            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina, cargaHoraria);
             curso.setDisciplinas(disciplina);
         }
 
         curso.setNome(nome);
-        curso.setCargaHorario(cargaHoraria);
+        curso.setTurno(turno);
     }
 }
 

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
-    public int Id;
-    public String Nome;
-    public int CargaHorario;
-    public List<Disciplina> disciplinas = new ArrayList<>();
+    private int Id;
+    private String Nome;
+    private String Turno;
+    private List<Disciplina> disciplinas = new ArrayList<>();
 
     public int getId() {
         return Id;
@@ -25,13 +25,10 @@ public class Curso {
         Nome = nome;
     }
 
-    public int getCargaHorario() {
-        return CargaHorario;
+    public String getTurno() {
+        return Turno;
     }
-
-    public void setCargaHorario(int cargaHorario) {
-        CargaHorario = cargaHorario;
-    }
+    public void setTurno(String turno) {Turno = turno;}
 
     public List<Disciplina> getDisciplinas() {
         return disciplinas;

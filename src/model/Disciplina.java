@@ -1,12 +1,14 @@
 package model;
 
 public class Disciplina {
-    public int Id;
-    public String Nome;
+    private int Id;
+    private String Nome;
+    private int CargaHorario;
 
-    public Disciplina(int id, String nome) {
+    public Disciplina(int id, String nome, int cargaHorario) {
         Id = id;
         Nome = nome;
+        CargaHorario = cargaHorario;
     }
 
     public int getId() {
@@ -25,4 +27,11 @@ public class Disciplina {
         Nome = nome;
     }
 
+    public int getCargaHorario() {
+        return CargaHorario;
+    }
+
+    public void setCargaHorario(int cargaHorario) {
+        CargaHorario = cargaHorario;
+    }
 }

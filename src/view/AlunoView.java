@@ -1,6 +1,8 @@
 package view;
 
 import model.Aluno;
+import model.Curso;
+import model.Disciplina;
 
 import java.util.Scanner;
 
@@ -10,6 +12,16 @@ public class AlunoView {
         System.out.println("Matricula: " + aluno.getMatricula());
         System.out.println("Nome: " + aluno.getNome());
         System.out.println("Idade: " + aluno.getIdade());
+        if (aluno.getCursos() != null) {
+            System.out.println("Curso: " + aluno.getCursos().getNome());
+            System.out.println("    Disciplinas: ");
+            for (Disciplina d : aluno.getCursos().getDisciplinas()) {
+                System.out.println("    " + d.getId() + " - " + d.getNome());
+            }
+
+        } else {
+            System.out.println("Curso: (nenhum)");
+        }
     }
 
     public static void Message(String message) {
@@ -27,9 +39,16 @@ public class AlunoView {
         System.out.println("Informe sua idade: ");
         int idade = scan.nextInt();
 
+        System.out.println("Informe o id do seu curso: ");
+        for (Curso c : ) {
+            System.out.println("    " + c.getId() + " - " + c.getNome());
+        }
+        int curso = scan.nextInt();
+
         aluno.setMatricula(matricula);
         aluno.setNome(nome);
         aluno.setIdade(idade);
+        aluno.setCursos();
     }
 
     public static int Read() {

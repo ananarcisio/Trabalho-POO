@@ -1,10 +1,10 @@
 package model;
 
 public class Aluno {
-    public int Matricula;
-    public String Nome;
-    public int Idade;
-    public Curso cursos;
+    private int Matricula;
+    private String Nome;
+    private int Idade;
+    private Curso cursos;
 
 
 
