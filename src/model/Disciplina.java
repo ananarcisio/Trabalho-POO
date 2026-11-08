@@ -1,14 +1,12 @@
 package model;
 
-public class Disciplinas {
+public class Disciplina {
     public int Id;
     public String Nome;
-    public Cursos Curso;
 
-    public Disciplinas(int id, String nome, Cursos curso) {
+    public Disciplina(int id, String nome) {
         Id = id;
         Nome = nome;
-        Curso = curso;
     }
 
     public int getId() {
@@ -27,11 +25,4 @@ public class Disciplinas {
         Nome = nome;
     }
 
-    public Cursos getCurso() {
-        return Curso;
-    }
-
-    public void setCurso(Cursos curso) {
-        Curso = curso;
-    }
 }

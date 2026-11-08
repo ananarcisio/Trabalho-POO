@@ -1,17 +1,12 @@
 package model;
 
-public class Alunos {
+public class Aluno {
     public int Matricula;
     public String Nome;
     public int Idade;
-    public Cursos cursos;
+    public Curso cursos;
 
-    public Alunos(int matricula, String nome, int idade, Cursos cursos) {
-        Matricula = matricula;
-        Nome = nome;
-        Idade = idade;
-        this.cursos = cursos;
-    }
+
 
     public int getMatricula() {
         return Matricula;
@@ -37,11 +32,11 @@ public class Alunos {
         Idade = idade;
     }
 
-    public Cursos getCursos() {
+    public Curso getCursos() {
         return cursos;
     }
 
-    public void setCursos(Cursos cursos) {
+    public void setCursos(Curso cursos) {
         this.cursos = cursos;
     }
 }

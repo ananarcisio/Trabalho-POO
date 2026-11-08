@@ -1,11 +1,12 @@
-package view;
+import SubMenus.SubMenuAluno;
+import SubMenus.SubMenuCurso;
 
 import java.util.Scanner;
 
 public class Menu {
-    public void exibirMenu(){
+    public static void Show(){
         Scanner sc = new Scanner(System.in);
-        int opcao;
+        int opcao = -1;
 
         do {
             System.out.println("------------Menu------------");
@@ -16,12 +17,13 @@ public class Menu {
             opcao = sc.nextInt();
 
             switch (opcao) {
-                case 1 -> gerenciarAluno();
-                case 2 -> gerenciarDisciplinas();
-                case 3 -> gerenciarCursos();
-                case 4 ->
-                        System.out.println("Saindo!");
-                break;
+                case 1 -> SubMenuAluno.Show();
+                case 2 -> System.out.println("SubMenuDisciplina.Show();");
+                case 3 -> SubMenuCurso.Show();
+                case 4 -> {
+                    System.out.println("Saindo!");
+                    break;
+                }
                 default -> System.out.println("Opção inválida!");
 
             }

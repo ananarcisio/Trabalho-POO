@@ -1,12 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Cursos {
+public class Curso {
     public int Id;
     public String Nome;
     public int CargaHorario;
-    public List<Disciplinas> disciplinas;
+    public List<Disciplina> disciplinas = new ArrayList<>();
 
     public int getId() {
         return Id;
@@ -32,18 +33,13 @@ public class Cursos {
         CargaHorario = cargaHorario;
     }
 
-    public List<Disciplinas> getDisciplinas() {
+    public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
-    public void setDisciplinas(List<Disciplinas> disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setDisciplinas(Disciplina disciplinas) {
+        this.disciplinas.add(disciplinas);
     }
 
-    public Cursos(int id, String nome, int cargaHorario, List<Disciplinas> disciplinas) {
-        Id = id;
-        Nome = nome;
-        CargaHorario = cargaHorario;
-        this.disciplinas = disciplinas;
-    }
+
 }
