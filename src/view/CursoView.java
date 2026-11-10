@@ -11,7 +11,7 @@ public class CursoView {
     public static void Show(Curso curso) {
         System.out.println("Nome: " + curso.getNome());
         System.out.println("Turno: " + curso.getTurno());
-        System.out.println("Disciplinas: " + curso.getDisciplinas());
+        System.out.println("Disciplinas: ");
         for (Disciplina d : curso.getDisciplinas()) {
             System.out.println("  " + d.getId() + " - " + d.getNome());
         }

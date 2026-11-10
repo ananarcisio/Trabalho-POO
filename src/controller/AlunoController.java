@@ -1,9 +1,13 @@
 package controller;
 
 import dao.AlunoDAO;
+import dao.CursoDAO;
 import model.Aluno;
+import model.Curso;
 import view.AlunoView;
+import view.CursoView;
 
+import java.util.List;
 import java.util.Optional;
 
 public class AlunoController {
@@ -27,6 +31,15 @@ public class AlunoController {
             AlunoView.Show(aluno.get());
         } else {
             AlunoView.Message("Aluno não encontrado!");
+        }
+    }
+
+    public static void ReadAll(){
+        List<Curso> curso = CursoDAO.ReadAll();
+        if(!curso.isEmpty()){
+            CursoView.Create(curso);
+        }else{
+            CursoView.Message("Nenhum curso cadastrado!");
         }
     }
 

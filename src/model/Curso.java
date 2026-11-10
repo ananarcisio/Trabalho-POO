@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Curso {
     private int Id;
-    private String Nome;
+    public String Nome;
     private String Turno;
     private List<Disciplina> disciplinas = new ArrayList<>();
 

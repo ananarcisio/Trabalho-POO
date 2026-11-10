@@ -4,6 +4,7 @@ import model.Aluno;
 import model.Curso;
 import model.Disciplina;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class AlunoView {
@@ -27,7 +28,7 @@ public class AlunoView {
     public static void Message(String message) {
         System.out.println(message);
     }
-    public static void Create(Aluno aluno) {
+    public static void Create(Aluno aluno, List<Curso> listaDeCursos) {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Informe sua matricula: ");
@@ -40,15 +41,15 @@ public class AlunoView {
         int idade = scan.nextInt();
 
         System.out.println("Informe o id do seu curso: ");
-        for (Curso c : ) {
+        /*for (Curso c : ) {
             System.out.println("    " + c.getId() + " - " + c.getNome());
-        }
+        }*/
         int curso = scan.nextInt();
 
         aluno.setMatricula(matricula);
         aluno.setNome(nome);
         aluno.setIdade(idade);
-        aluno.setCursos();
+        //aluno.setCursos();
     }
 
     public static int Read() {

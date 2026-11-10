@@ -18,6 +18,10 @@ public class CursoDAO {
         return GetCursoByNome(nome);
     }
 
+    public static List<Curso> ReadAll(){
+        return new ArrayList<>(cursoList);
+    }
+
     public static boolean Delete(String nome) {
         Optional<Curso> curso = GetCursoByNome(nome);
         if (curso.isPresent()) {
@@ -34,4 +38,5 @@ public class CursoDAO {
                 .filter(curso -> curso.getNome().equalsIgnoreCase(nome))
                 .findFirst();
     }
+
 }
