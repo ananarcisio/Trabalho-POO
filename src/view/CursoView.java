@@ -1,6 +1,8 @@
 package view;
 
 
+import controller.CursoController;
+import controller.DisciplinaController;
 import model.Curso;
 import model.Disciplina;
 
@@ -23,36 +25,36 @@ public class CursoView {
     public static void Create(Curso curso) {
         Scanner scan = new Scanner(System.in);
 
+
         System.out.println("Informe o nome do curso: ");
         String nome = scan.next();
 
         System.out.println("Informe o turno do curso: ");
         String turno = scan.next();
 
-        System.out.println("Informe a quantidade de disciplinas do curso: ");
+        DisciplinaController.ReadAll();
+
+        System.out.println("Informe a quantidade de disciplinas que deseja vincular: ");
         int x = scan.nextInt();
 
-        for (int i = 0; i < x; i++) {
-            System.out.println("Informe o nome da disciplina " + (i + 1) + ":");
-            String nomeDisciplina = scan.next();
-            System.out.println("Informe o id da disciplina " + (i + 1) + ":");
-            int idDisciplina = scan.nextInt();
-            System.out.println("Informe a carga horária da disciplina " + (i + 1) + ":");
-            int cargaHoraria = scan.nextInt();
-            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina, cargaHoraria);
-            curso.setDisciplinas(disciplina);
+        for (int i = 1; i <= x; i++) {
+            System.out.println("Informe o id da disciplina " + i + "º" + " que deseja vincular:");
+            int id = scan.nextInt();
+            curso.setDisciplinas(DisciplinaController.disciplinaRetorno());
+
         }
 
+        CursoController.gerarId(curso);
         curso.setNome(nome);
         curso.setTurno(turno);
     }
 
-    public static String Read() {
+    public static int Read() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Informe o nome do curso: ");
-        String nome = scan.next();
-        return nome;
+        System.out.println("Informe o id do curso: ");
+        int id = scan.nextInt();
+        return id;
     }
 
     public static void Update(Curso curso) {
@@ -65,18 +67,15 @@ public class CursoView {
         String turno = scan.next();
 
         System.out.println("Atualize as disciplinas do curso: " + "(" + curso.getDisciplinas() + "): ");
-        System.out.println("Informe a nova quantidade de disciplinas do curso: ");
+
+        System.out.println("Informe a quantidade de disciplinas que deseja vincular: ");
         int x = scan.nextInt();
 
-        for (int i = 0; i < x; i++) {
-            System.out.println("Informe o nome da disciplina " + (i + 1) + ":");
-            String nomeDisciplina = scan.next();
-            System.out.println("Informe o id da disciplina " + (i + 1) + ":");
-            int idDisciplina = scan.nextInt();
-            System.out.println("Informe a carga horária da disciplina " + (i + 1) + ":");
-            int cargaHoraria = scan.nextInt();
-            Disciplina disciplina = new Disciplina(idDisciplina, nomeDisciplina, cargaHoraria);
-            curso.setDisciplinas(disciplina);
+        for (int i = 1; i <= x; i++) {
+            System.out.println("Informe o id da disciplina " + i + "º" +  " que deseja vincular:");
+            int id = scan.nextInt();
+            curso.setDisciplinas(DisciplinaController.disciplinaRetorno());
+
         }
 
         curso.setNome(nome);

@@ -1,5 +1,7 @@
 package view;
 
+import controller.AlunoController;
+import controller.CursoController;
 import model.Aluno;
 import model.Curso;
 import model.Disciplina;
@@ -8,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AlunoView {
+
 
     public static void Show(Aluno aluno) {
         System.out.println("Matricula: " + aluno.getMatricula());
@@ -28,7 +31,7 @@ public class AlunoView {
     public static void Message(String message) {
         System.out.println(message);
     }
-    public static void Create(Aluno aluno, List<Curso> listaDeCursos) {
+    public static void Create(Aluno aluno) {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Informe sua matricula: ");
@@ -40,16 +43,12 @@ public class AlunoView {
         System.out.println("Informe sua idade: ");
         int idade = scan.nextInt();
 
-        System.out.println("Informe o id do seu curso: ");
-        /*for (Curso c : ) {
-            System.out.println("    " + c.getId() + " - " + c.getNome());
-        }*/
-        int curso = scan.nextInt();
+        CursoController.ReadAll();
 
         aluno.setMatricula(matricula);
         aluno.setNome(nome);
         aluno.setIdade(idade);
-        //aluno.setCursos();
+        aluno.setCursos(AlunoController.cursoRetorno());
     }
 
     public static int Read() {
@@ -57,6 +56,14 @@ public class AlunoView {
 
         System.out.println("Informe o numero da matricula: ");
         return scan.nextInt();
+    }
+
+    public static int cursoRetorno() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Informe o id do curso que deseja se matricular: ");
+        int id = scan.nextInt();
+        return id;
     }
 
     public static void Update(Aluno aluno) {
@@ -71,8 +78,11 @@ public class AlunoView {
         System.out.println("Atualize sua idade: " + "(" + aluno.getIdade() + "): ");
         int idade = scan.nextInt();
 
+        CursoController.ReadAll();
+
         aluno.setMatricula(matricula);
         aluno.setNome(nome);
         aluno.setIdade(idade);
+        aluno.setCursos(AlunoController.cursoRetorno());
     }
 }

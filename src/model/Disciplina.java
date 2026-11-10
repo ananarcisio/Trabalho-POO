@@ -5,12 +5,6 @@ public class Disciplina {
     private String Nome;
     private int CargaHorario;
 
-    public Disciplina(int id, String nome, int cargaHorario) {
-        Id = id;
-        Nome = nome;
-        CargaHorario = cargaHorario;
-    }
-
     public int getId() {
         return Id;
     }

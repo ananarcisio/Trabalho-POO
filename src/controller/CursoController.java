@@ -20,9 +20,10 @@ public class CursoController {
         }
     }
 
+
     public static void Read() {
-        String nome = CursoView.Read();
-        Optional<Curso> curso = CursoDAO.Read(nome);
+        int id = CursoView.Read();
+        Optional<Curso> curso = CursoDAO.Read(id);
         if (curso.isPresent()) {
             CursoView.Message("Curso encontrado!");
             CursoView.Show(curso.get());
@@ -31,9 +32,23 @@ public class CursoController {
         }
     }
 
+
+
+    public static void ReadAll(){
+        List<Curso> curso = CursoDAO.ReadAll();
+        if(!curso.isEmpty()){
+            System.out.println("--------Cursos Disponíveis--------");
+            for(Curso c : curso){
+                System.out.println("    " + c.getId() + " - " + c.getNome());
+            }
+        }else{
+            CursoView.Message("Nenhum curso cadastrado!");
+        }
+    }
+
     public static void Delete() {
-        String nome = CursoView.Read();
-        if (CursoDAO.Delete(nome)) {
+        int id = CursoView.Read();
+        if (CursoDAO.Delete(id)) {
             CursoView.Message("Curso excluido com sucesso!");
         } else {
             CursoView.Message("Curso não encontrado!");
@@ -42,12 +57,17 @@ public class CursoController {
     }
 
     public static void Update() {
-        String nome = CursoView.Read();
-        Optional<Curso> curso = CursoDAO.GetCursoByNome(nome);
+        int id = CursoView.Read();
+        Optional<Curso> curso = CursoDAO.GetCursoById(id);
         if (curso.isPresent()) {
             CursoView.Update(curso.get());
         } else {
-            CursoView.Message("Aluno não encontrado!");
+            CursoView.Message("Curso não encontrado!");
         }
     }
+    public static void gerarId(Curso curso){
+        int i = CursoDAO.cursoList.size();
+        curso.setId(i + 1);
+    }
+
 }

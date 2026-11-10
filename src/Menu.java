@@ -1,5 +1,6 @@
 import SubMenus.SubMenuAluno;
 import SubMenus.SubMenuCurso;
+import SubMenus.SubMenuDisciplina;
 
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Menu {
 
             switch (opcao) {
                 case 1 -> SubMenuAluno.Show();
-                case 2 -> System.out.println("SubMenuDisciplina.Show();");
+                case 2 -> SubMenuDisciplina.Show();
                 case 3 -> SubMenuCurso.Show();
                 case 4 -> {
                     System.out.println("Saindo!");

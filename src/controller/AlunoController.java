@@ -7,7 +7,6 @@ import model.Curso;
 import view.AlunoView;
 import view.CursoView;
 
-import java.util.List;
 import java.util.Optional;
 
 public class AlunoController {
@@ -23,6 +22,17 @@ public class AlunoController {
         }
     }
 
+    public static Curso cursoRetorno(){
+        int id = AlunoView.cursoRetorno();
+        Optional<Curso> curso = CursoDAO.Read(id);
+        if (curso.isPresent()) {
+            return curso.get();
+        } else {
+            CursoView.Message("Curso não encontrado!");
+            return null;
+        }
+    }
+
     public static void Read() {
         int matricula = AlunoView.Read();
         Optional<Aluno> aluno = AlunoDAO.Read(matricula);
@@ -31,15 +41,6 @@ public class AlunoController {
             AlunoView.Show(aluno.get());
         } else {
             AlunoView.Message("Aluno não encontrado!");
-        }
-    }
-
-    public static void ReadAll(){
-        List<Curso> curso = CursoDAO.ReadAll();
-        if(!curso.isEmpty()){
-            CursoView.Create(curso);
-        }else{
-            CursoView.Message("Nenhum curso cadastrado!");
         }
     }
 
@@ -62,5 +63,6 @@ public class AlunoController {
             AlunoView.Message("Aluno não encontrado!");
         }
     }
+
 
 }

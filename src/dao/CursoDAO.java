@@ -14,16 +14,16 @@ public class CursoDAO {
         cursoList.add(curso);
     }
 
-    public static Optional<Curso> Read(String nome) {
-        return GetCursoByNome(nome);
+    public static Optional<Curso> Read(int id) {
+        return GetCursoById(id);
     }
 
     public static List<Curso> ReadAll(){
         return new ArrayList<>(cursoList);
     }
 
-    public static boolean Delete(String nome) {
-        Optional<Curso> curso = GetCursoByNome(nome);
+    public static boolean Delete(int id) {
+        Optional<Curso> curso = GetCursoById(id);
         if (curso.isPresent()) {
             cursoList.remove(curso.get());
             return true;
@@ -33,9 +33,9 @@ public class CursoDAO {
 
     }
 
-    public static Optional<Curso> GetCursoByNome(String nome) {
+    public static Optional<Curso> GetCursoById(int id) {
         return cursoList.stream()
-                .filter(curso -> curso.getNome().equalsIgnoreCase(nome))
+                .filter(curso -> curso.getId() == (id))
                 .findFirst();
     }
 
