@@ -36,8 +36,7 @@ public class DisciplinaController {
         }
     }
 
-    public static Disciplina disciplinaRetorno(){
-        int id = DisciplinaView.disciplinaRetorno();
+    public static Disciplina disciplinaRetorno(int id){
         Optional<Disciplina> disciplina = DisciplinaDAO.Read(id);
         if (disciplina.isPresent()) {
             return disciplina.get();

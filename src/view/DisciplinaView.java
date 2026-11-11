@@ -37,13 +37,6 @@ public class DisciplinaView {
         return id;
     }
 
-    public static int disciplinaRetorno() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Informe o id da disciplina que deseja vincular: ");
-        int id = scan.nextInt();
-        return id;
-    }
 
     public static void Update(Disciplina disciplina) {
         Scanner scan = new Scanner(System.in);

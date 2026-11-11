@@ -38,9 +38,9 @@ public class CursoView {
         int x = scan.nextInt();
 
         for (int i = 1; i <= x; i++) {
-            System.out.println("Informe o id da disciplina " + i + "º" + " que deseja vincular:");
+            System.out.println("Informe o id da " + i + "º" + "disciplina que deseja vincular:");
             int id = scan.nextInt();
-            curso.setDisciplinas(DisciplinaController.disciplinaRetorno());
+            curso.setDisciplinas(DisciplinaController.disciplinaRetorno(id));
 
         }
 
@@ -72,9 +72,9 @@ public class CursoView {
         int x = scan.nextInt();
 
         for (int i = 1; i <= x; i++) {
-            System.out.println("Informe o id da disciplina " + i + "º" +  " que deseja vincular:");
+            System.out.println("Informe o id da " + i + "º" + "disciplina que deseja vincular:");
             int id = scan.nextInt();
-            curso.setDisciplinas(DisciplinaController.disciplinaRetorno());
+            curso.setDisciplinas(DisciplinaController.disciplinaRetorno(id));
 
         }
 
