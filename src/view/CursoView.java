@@ -7,6 +7,7 @@ import model.Curso;
 import model.Disciplina;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class CursoView {
 
@@ -44,7 +45,6 @@ public class CursoView {
 
         }
 
-        CursoController.gerarId(curso);
         curso.setNome(nome);
         curso.setTurno(turno);
     }
@@ -66,7 +66,11 @@ public class CursoView {
         System.out.println("Atualize o turno da curso: " + "(" + curso.getTurno() + "): ");
         String turno = scan.next();
 
-        System.out.println("Atualize as disciplinas do curso: " + "(" + curso.getDisciplinas() + "): ");
+        String nomes = curso.getDisciplinas().stream()
+                .map(Disciplina::getNome)
+                .collect(Collectors.joining(", "));
+
+        System.out.println("Atualize as disciplinas do curso: " + "(" + nomes + "): ");
 
         System.out.println("Informe a quantidade de disciplinas que deseja vincular: ");
         int x = scan.nextInt();

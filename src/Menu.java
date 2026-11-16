@@ -23,7 +23,7 @@ public class Menu {
                 case 3 -> SubMenuCurso.Show();
                 case 4 -> {
                     System.out.println("Saindo!");
-                    break;
+                    System.exit(0);
                 }
                 default -> System.out.println("Opção inválida!");
 

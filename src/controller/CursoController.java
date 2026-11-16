@@ -68,7 +68,4 @@ public class CursoController {
         }
     }
 
-    public static void gerarId(Curso curso) {
-        // ID gerado automaticamente pelo banco (SERIAL)
-    }
 }

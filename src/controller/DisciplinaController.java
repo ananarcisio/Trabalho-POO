@@ -24,7 +24,7 @@ public class DisciplinaController {
         int id = DisciplinaView.Read();
         Optional<Disciplina> disciplina = DisciplinaDAO.Read(id);
         if (disciplina.isPresent()) {
-            DisciplinaView.Message("Disciplina encontrado!");
+            DisciplinaView.Message("Disciplina encontrada!");
             DisciplinaView.Show(disciplina.get());
         } else {
             DisciplinaView.Message("Disciplina não encontrado!");
